@@ -5,7 +5,7 @@ services:
     image: postgres:16-alpine
     restart: always
     environment:
-      POSTGRES_USER: daniel
+      POSTGRES_USER: khalid
       POSTGRES_PASSWORD: datascientest
       POSTGRES_DB: dst_db
     ports:
@@ -15,7 +15,7 @@ services:
     image: dpage/pgadmin4
     restart: always
     environment:
-      PGADMIN_DEFAULT_EMAIL: daniel@datascientest.com
+      PGADMIN_DEFAULT_EMAIL: khalid.kherrazi@gmail.com
       PGADMIN_DEFAULT_PASSWORD: data_engineer
     ports:
       - "5050:80"
