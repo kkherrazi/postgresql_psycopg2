@@ -64,11 +64,13 @@ psql -h localhost -U khalid -d kkherrazi_v1
 #Afficher les tables de la base kkherrazi_v1
 SELECT * FROM Chiens;
 
-#Aller dans autre base 
+#Aller dans d'autre bases 
 \c kkherrazi_v2
 ```
 
-**Connexion [pgAdmin](http://pgadmin.org/) à Postgres**
+## pgAdmin
+
+Connexion [pgAdmin](http://pgadmin.org/) à Postgres
 
 pgAdmin est disponible à l'adresse : _vm_ip_adress:5050_
 
@@ -77,25 +79,13 @@ pgAdmin est disponible à l'adresse : _vm_ip_adress:5050_
 
 Utiliser la librairie [psycopg2](https://pypi.org/project/psycopg2/) pour interagir avec les bases de données PostgreSQL.
 
-installer la librairie.
+Installer la librairie.
 ```bash
 sudo apt-get install libpq-dev
 pip install psycopg2
 ```
  
-installer la librairie.
+Lancer le script Python:
 ```bash
 python3 graph.py 
 ```
-
- 
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
