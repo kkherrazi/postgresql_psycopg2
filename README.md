@@ -1,5 +1,6 @@
 # chiens_pour_tous_bd
 
+Gestion d'une BD relationelle avec PostgreSQL, pgAdmin et Python
 
 ## Installation
 
