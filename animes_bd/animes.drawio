@@ -97,9 +97,6 @@
         <mxCell id="VxxBcBzSQ26VVozvf14f-64" value="A pour" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeLast=1;container=0;fontColor=#000000;collapsible=0;rounded=1;arcSize=20;strokeColor=#ff0000;fillColor=#ffffc0;swimlaneFillColor=#ffffc0;dropTarget=0;" vertex="1" parent="1">
           <mxGeometry x="210" y="354.5" width="100" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="VxxBcBzSQ26VVozvf14f-65" value="" style="line;strokeWidth=2;html=1;" vertex="1" parent="1">
-          <mxGeometry x="340" y="650" width="160" height="10" as="geometry" />
-        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
