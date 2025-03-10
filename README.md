@@ -1,15 +1,14 @@
 # chiens_pour_tous_bd
 
-Gestion d'une BD avec PostgPostgreSQL et pgAdmin. 
 
 ## Installation
 
-Lancer le serveur:
+Lancez le serveur avec la commande:
 
 ```bash
-pdocker-compose up -d
+docker-compose up -d
 ```
-Vérifer que tous les conteneurs tournent:
+Vérifez que tous les conteneurs tournent avec la commande:
 
 ```bash
 docker ps
@@ -17,7 +16,7 @@ docker ps
 
 ## Usage
 
-Accéder au CLI PostgreSQL qui s'exécute à l'intérieur du conteneur Docker:
+Accédez au CLI PostgreSQL qui s'exécute à l'intérieur du conteneur Docker avec cette commande:
 
 ```bash
 docker exec -it pg_container bash
@@ -28,13 +27,13 @@ Se connecter à la base de données PostgreSQL
 psql -h localhost -U kkherrazi dst_db
 ```
 
-Consulter les bases de données déjà présentes avec la commande:
+Vous pouvez regarder les bases de données déjà présentes avec la commande:
 
 ```bash
  \l
 ```
 
-Créer des BDs:
+creation des BDs:
 
 ```bash
  #A executer dans la console PostgreSQL
@@ -44,7 +43,7 @@ CREATE DATABASE kkherrazi_v3;
 CREATE DATABASE kkherrazi_v4;
 ```
 
-Restaurer des des BDs à partire des sauvegarde :
+Restauration des des BDs à partire des sauvegarde :
 
 ```bash
 docker exec -i pg_container psql -U kkherrazi -d chenil_v1 < ./dump/kkherrazi_v1.sql
@@ -53,7 +52,7 @@ docker exec -i pg_container psql -U kkherrazi -d chenil_v3 < ./dump/kkherrazi_v3
 docker exec -i pg_container psql -U kkherrazi -d chenil_v4 < ./dump/kkherrazi_v4.sql
 ```
  
- Se connecter à PostgreSQL et acceder aux bases de données :
+Se connecter à PostgreSQL et acceder aux bases de données :
 
 ```bash
 docker exec -it pg_container bash
@@ -68,9 +67,25 @@ SELECT * FROM Chiens;
 \c kkherrazi_v2
 ```
 
-Connecter pgAdmin à Postgres
+**Connexion [pgAdmin](http://pgadmin.org/) à Postgres**
 
-Acceder à pgAdmin via le navigateur à l'adresse : _vm_ip_adress:5050_
+pgAdmin est disponible à l'adresse : _vm_ip_adress:5050_
+
+
+## Requêtes avec Python
+
+Utiliser la librairie [psycopg2](https://pypi.org/project/psycopg2/) pour interagir avec les bases de données PostgreSQL.
+
+installer la librairie.
+```bash
+sudo apt-get install libpq-dev
+pip install psycopg2
+```
+ 
+installer la librairie.
+```bash
+python3 graph.py 
+```
 
  
 ## Contributing
