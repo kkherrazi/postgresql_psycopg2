@@ -1,6 +1,8 @@
-# chiens_pour_tous_bd
+# SQL
 
-Gestion d'une BD relationelle avec PostgreSQL, pgAdmin et Python
+Exemples d'implementations de BD relationelle avec PostgreSQL et pgAdmin.
+
+Utilisation de la librairie Python (psycopg2)[https://pypi.org/project/psycopg2/] pour interagir avec les bases de données PostgreSQL.
 
 ## Installation
 
@@ -14,6 +16,13 @@ Vérifez que tous les conteneurs tournent avec la commande:
 ```bash
 docker ps
 ```
+ 
+Instalation de la librairie _psycopg_: 
+
+```bash
+sudo apt-get install libpq-dev
+pip install psycopg2
+```
 
 ## Usage
 
@@ -25,25 +34,25 @@ docker exec -it pg_container bash
 Se connecter à la base de données PostgreSQL
 
 ```bash
-psql -h localhost -U kkherrazi dst_db
+psql -h localhost -U kkherrazi kkherrazi_db
 ```
 
 ```bash
  \l
 ```
 
-creation des BDs:
+Créer les base de données:
 
 ```bash
  #A executer dans la console PostgreSQL
-CREATE DATABASE kkherrazi_v3;
-CREATE DATABASE kkherrazi_v4;
+DROP DATBASE IF EXISTS kkherrazi_db_v1;
+CREATE DATABASE -U khalid kkherrazi_db_v1;
 ```
 
-Restauration des des BDs à partire de la sauvegarde :
+Restauration des des base de données à partire de la sauvegarde :
 
 ```bash
-docker exec -i pg_container psql -U kkherrazi -d kkherrazi_v4 < ./dump/kkherrazi_v4.sql
+docker exec -i pg_container psql -U kkherrazi -d kkherrazi_db < ./dump/kkherrazi_db.sql
 ```
  
 Se connecter à PostgreSQL et acceder aux bases de données :
@@ -52,26 +61,57 @@ Se connecter à PostgreSQL et acceder aux bases de données :
 docker exec -it pg_container bash
 
 #Acceder à la base kkherrazi_v4
-psql -h localhost -U khalid -d kkherrazi_v4
+psql -h localhost -U khalid -d kkherrazi_db
+
+#Lister les utilisateu: 
+\du
 
 #Lister les base données disponibles: 
 \l
 
 #Aller dans d'autre bases: 
-\c kkherrazi_v3
+\c kkherrazi_db_v1
 
 #Afficher les table Chienss qui constituent cette base de données 
 \dt
 
-#Afficher la description de la table Chiens: 
-\d+ Chiens;
+#Afficher la description d'une table : 
+\d+ nom_table;
 
-#Et afficher tous les chiens ! 
-SELECT * FROM Chiens;
+#Et afficher le contenu d'une table : 
+SELECT * FROM nom_table;
 
 #quiter la base: 
 \q
 ```
+
+Effectuer une sauvegarde de la base de données, en utilisant l'utilitaire pg_dump:
+
+```bash
+pg_dump -U kkherrazi -d kkherrazi_db_v2 -f kkherrazi_db_backup.sql
+```
+
+Effectuer une sauvegarde sur Postgres, en utilisant l'utilitaire _pg_dump_:
+
+```bash
+pg_dumpall -U kkherrazi -f backup_all.sql
+
+```
+Taper _ls_ dans le même shell pour voir le fichier backup dans le conteneur. Pour l'extraire dans la machine virtuelle il faut utiliser la commande Docker _cp_ :
+
+```bash
+docker cp pg_container:backup_all.sql .dump/
+
+```
+
+
+Il est possible aussi de restaurer une base de données en utilisant _psgl_ depuis le CLI PostgresSQL : 
+
+```bash
+createdb -U kkherrazi new_db_v4
+psql -U daniel -d new_db_v4 -f backup_db_v4.sql
+```
+
 
 ## pgAdmin
 
