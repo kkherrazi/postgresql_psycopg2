@@ -28,8 +28,6 @@ Se connecter à la base de données PostgreSQL
 psql -h localhost -U kkherrazi dst_db
 ```
 
-Vous pouvez regarder les bases de données déjà présentes avec la commande:
-
 ```bash
  \l
 ```
@@ -56,11 +54,23 @@ docker exec -it pg_container bash
 #Acceder à la base kkherrazi_v4
 psql -h localhost -U khalid -d kkherrazi_v4
 
-#Afficher les tables de la base kkherrazi_v4
+#Lister les base données disponibles: 
+\l
+
+#Aller dans d'autre bases: 
+\c kkherrazi_v3
+
+#Afficher les table Chienss qui constituent cette base de données 
+\dt
+
+#Afficher la description de la table Chiens: 
+\d+ Chiens;
+
+#Et afficher tous les chiens ! 
 SELECT * FROM Chiens;
 
-#Aller dans d'autre bases 
-\c kkherrazi_v3
+#quiter la base: 
+\q
 ```
 
 ## pgAdmin
