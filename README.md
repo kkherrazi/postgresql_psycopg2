@@ -1,6 +1,6 @@
 # SQL
 
-Exemples d'implementations de BD relationelle avec PostgreSQL et pgAdmin.
+Exemples d'implementations de BD relationelle avec PostgreSQL et [pgAdmin](https://www.pgadmin.org/).
 
 Utilisation de la librairie Python [psycopg2](https://pypi.org/project/psycopg2/) pour interagir avec les bases de données PostgreSQL.
 
@@ -85,13 +85,13 @@ SELECT * FROM nom_table;
 \q
 ```
 
-Effectuer une sauvegarde de la base de données, en utilisant l'utilitaire pg_dump:
+Effectuer une sauvegarde de la base de données, en utilisant l'utilitaire [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html):
 
 ```bash
 pg_dump -U kkherrazi -d kkherrazi_db_v2 -f kkherrazi_db_backup.sql
 ```
 
-Effectuer une sauvegarde sur Postgres, en utilisant l'utilitaire _pg_dump_:
+Effectuer une sauvegarde de toutes les bases disponibles sur Postgres, en utilisant l'utilitaire [pg_dumpall](hhttps://docs.postgresql.fr/12/app-pg-dumpall.html):
 
 ```bash
 pg_dumpall -U kkherrazi -f backup_all.sql
@@ -103,7 +103,6 @@ Taper _ls_ dans le même shell pour voir le fichier backup dans le conteneur. Po
 docker cp pg_container:backup_all.sql .dump/
 
 ```
-
 
 Il est possible aussi de restaurer une base de données en utilisant _psgl_ depuis le CLI PostgresSQL : 
 
