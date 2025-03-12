@@ -1,8 +1,6 @@
 # SQL
 
-Exemples d'implementations de BD relationelle avec PostgreSQL et [pgAdmin](https://www.pgadmin.org/).
-
-Utilisation de la librairie Python [psycopg2](https://pypi.org/project/psycopg2/) pour interagir avec les bases de données PostgreSQL.
+Exemples d'implementations de BD relationelle avec PostgreSQL et [pgAdmin](https://www.pgadmin.org/) avec utilisation de la librairie Python [psycopg2](https://pypi.org/project/psycopg2/) pour interagir avec les bases de données PostgreSQL.
 
 ## Installation
 
@@ -111,7 +109,6 @@ createdb -U kkherrazi new_db_v4
 psql -U daniel -d new_db_v4 -f backup_db_v4.sql
 ```
 
-
 ## pgAdmin
 
 Connexion [pgAdmin](http://pgadmin.org/) à Postgres
@@ -121,7 +118,7 @@ L'interface utilisateur pgAdmin est disponible à l'adresse : _vm_ip_adress:5050
 
 ## Requêtes avec Python
 
-Utiliser la librairie [psycopg2](https://pypi.org/project/psycopg2/) pour interagir avec les bases de données PostgreSQL.
+La librairie [psycopg2](https://pypi.org/project/psycopg2/) permet d'interagir avec les bases de données PostgreSQL.
 
 Lancer le script Python:
 ```bash

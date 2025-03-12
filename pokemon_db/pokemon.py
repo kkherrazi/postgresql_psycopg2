@@ -41,8 +41,6 @@ rexecuteRequest(TITLE, REQUEST)
 #Requete 3 ------------------
 TITLE="OBJECIF 3: Afficher les types de Pokémon avec la base de points moyenne dans l'ordre croissant"
 REQUEST = "SELECT T.name_type, AVG(P.base_total) FROM PokemonType PT JOIN Types T USING(type_id) JOIN Pokemon P USING(pokedex_number) GROUP BY T.type_id ORDER BY AVG(P.base_total);"
-print(TITLE)
-print(REQUEST)
 rexecuteRequest(TITLE, REQUEST)  
  
 
