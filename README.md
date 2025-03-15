@@ -1,21 +1,21 @@
-# SQL
+# SQL exemples ( avec PostgresSQL, Psycopg et pgAdmin )
 
-Exemples d'implementations de BD relationelle avec PostgreSQL et [pgAdmin](https://www.pgadmin.org/) avec utilisation de la librairie Python [psycopg2](https://pypi.org/project/psycopg2/) pour interagir avec les bases de données PostgreSQL.
+Exemples d'implementations de BD relationelle avec PostgreSQL et [pgAdmin](https://www.pgadmin.org/) avec utilisation de la librairie Python [Psycopg2](https://pypi.org/project/psycopg2/) pour interagir avec les bases de données PostgreSQL.
 
 ## Installation
 
-Lancez le serveur avec la commande:
+Lancer le serveur avec la commande:
 
 ```bash
 docker-compose up -d
 ```
-Vérifez que tous les conteneurs tournent avec la commande:
+Vérifer que tous les conteneurs tournent avec la commande:
 
 ```bash
 docker ps
 ```
  
-Instalation de la librairie _psycopg_: 
+Installer la librairie _psycopg_: 
 
 ```bash
 sudo apt-get install libpq-dev
@@ -24,7 +24,7 @@ pip install psycopg2
 
 ## Usage
 
-Accédez au CLI PostgreSQL qui s'exécute à l'intérieur du conteneur Docker avec cette commande:
+Accéder au CLI PostgreSQL qui s'exécute à l'intérieur du conteneur Docker avec cette commande:
 
 ```bash
 docker exec -it pg_container bash
@@ -47,7 +47,7 @@ DROP DATBASE IF EXISTS kkherrazi_db_v1;
 CREATE DATABASE -U khalid kkherrazi_db_v1;
 ```
 
-Restauration des des base de données à partire de la sauvegarde :
+Restaurer les base de donnée à partire d'une sauvegarde :
 
 ```bash
 docker exec -i pg_container psql -U kkherrazi -d kkherrazi_db < ./dump/kkherrazi_db.sql
@@ -116,9 +116,9 @@ Connexion [pgAdmin](http://pgadmin.org/) à Postgres
 L'interface utilisateur pgAdmin est disponible à l'adresse : _vm_ip_adress:5050_
 
 
-## Requêtes avec Python
+## Requêter avec Python
 
-La librairie [psycopg2](https://pypi.org/project/psycopg2/) permet d'interagir avec les bases de données PostgreSQL.
+La librairie [Psycopg2](https://pypi.org/project/psycopg2/) permet d'interagir avec les bases de données PostgreSQL.
 
 Lancer le script Python:
 ```bash
