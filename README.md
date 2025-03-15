@@ -53,7 +53,7 @@ Restaurer les base de donnée à partire d'une sauvegarde :
 docker exec -i pg_container psql -U kkherrazi -d kkherrazi_db < ./dump/kkherrazi_db.sql
 ```
  
-Se connecter à PostgreSQL et acceder aux bases de données :
+Se connecter à PostgreSQL et accéder aux bases de données :
 
 ```bash
 docker exec -it pg_container bash
@@ -102,11 +102,11 @@ docker cp pg_container:backup_all.sql .dump/
 
 ```
 
-Il est possible aussi de restaurer une base de données en utilisant _psgl_ depuis le CLI PostgresSQL : 
+Il est possible aussi de restaurer une base de données en utilisant la commande (psgl)[https://docs.postgresql.fr/13/app-psql.html] depuis le CLI PostgresSQL : 
 
 ```bash
 createdb -U kkherrazi new_db_v4
-psql -U daniel -d new_db_v4 -f backup_db_v4.sql
+psql -U khalid -d new_db_v4 -f backup_db_v4.sql
 ```
 
 ## pgAdmin
