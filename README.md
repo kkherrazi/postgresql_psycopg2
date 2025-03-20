@@ -1,4 +1,4 @@
-# SQL exemples ( avec PostgresSQL, Psycopg et pgAdmin )
+# SQL exemples (PostgresSQL, Psycopg et pgAdmin )
 
 Exemples d'implementations de BD relationelle avec PostgreSQL et [pgAdmin](https://www.pgadmin.org/) avec utilisation de la librairie Python [Psycopg2](https://pypi.org/project/psycopg2/) pour interagir avec les bases de données PostgreSQL.
 
